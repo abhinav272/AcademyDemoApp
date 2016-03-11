@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/app_bar" />
+
+    <EditText
+        android:id="@+id/academy_name"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_below="@+id/toolbar"
+        android:background="@color/colorPrimary"
+        android:gravity="center_vertical"
+        android:hint="Academy Name"
+        android:paddingLeft="10dp"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorWhite"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/image"
+        android:layout_below="@+id/academy_name"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/icon_add"
+        android:background="@color/colorBackground"
+        android:layout_width="150dp"
+        android:layout_height="150dp" />
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/imagetv"
+        android:text="Add Image"
+        android:layout_below="@+id/image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/user_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imagetv"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/user_drawable"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/icon_user" />
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@android:color/transparent"
+            android:hint="Name" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/link_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/user_container"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/link_drawablle"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/icon_link" />
+
+        <EditText
+            android:id="@+id/link"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@android:color/transparent"
+            android:hint="Link to Website"
+            android:inputType="textWebEditText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/email_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/link_container"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/email_drawable"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/icon_mail" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@android:color/transparent"
+            android:hint="Email ID"
+            android:inputType="textEmailAddress" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mobile_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/email_container"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/mobile_drawable"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/icon_call" />
+
+        <EditText
+            android:id="@+id/mobile"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@android:color/transparent"
+            android:hint="Mobile Number"
+            android:inputType="phone"
+            android:maxLength="10" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/location_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mobile_container"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/location_drawable"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/icon_location" />
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@android:color/transparent"
+            android:hint="Location"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/decription_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/location_container"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/description_drawable"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/icon_description" />
+
+        <EditText
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@android:color/transparent"
+            android:hint="Description" />
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>
