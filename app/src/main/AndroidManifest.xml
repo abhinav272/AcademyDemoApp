@@ -33,8 +33,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity" />
-        <activity android:name=".HomeActivity" />
+        <activity android:name=".HomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data android:name="android.app.SearchableInfo"
+                android:resource="@xml/searchable" />
+        </activity>
         <activity android:name=".AddListingItem"/>
+        <activity android:name=".AcademyDetailsActivity"/>
+        <activity android:name=".MapsActivity"/>
         <service android:name=".Services.AcademyDBService"/>
 
     </application>
