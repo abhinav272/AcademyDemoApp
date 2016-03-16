@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -25,6 +27,8 @@ import com.abhinav.academydemoapp.Database.AcademyDBHelper;
 import com.abhinav.academydemoapp.Model.AcademyItem;
 import com.squareup.picasso.Picasso;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -169,8 +173,15 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
             item.setLocation(allItems.getString(allItems.getColumnIndex(AcademyDBHelper.TableEntries.COL_ACADEMY_LOCATION)));
             item.setWebsite(allItems.getString(allItems.getColumnIndex(AcademyDBHelper.TableEntries.COL_ACADEMY_WEBSITE)));
             item.setDescription(allItems.getString(allItems.getColumnIndex(AcademyDBHelper.TableEntries.COL_ACADEMY_DESCRIPTION)));
-            Date date = new Date(allItems.getString(allItems.getColumnIndex(AcademyDBHelper.TableEntries.COL_RECORD_ADDED_ON)));
-            item.setAddedOn(date);
+            SimpleDateFormat df = new SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy");
+            try {
+                Date dd = df.parse(allItems.getString(allItems.getColumnIndex(AcademyDBHelper.TableEntries.COL_RECORD_ADDED_ON)));
+                item.setAddedOn(dd);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+//            Date date = new Date(allItems.getString(allItems.getColumnIndex(AcademyDBHelper.TableEntries.COL_RECORD_ADDED_ON)));
+//            item.setAddedOn(date);
             academyItems.add(item);
         }
         return academyItems;
